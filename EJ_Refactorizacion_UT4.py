@@ -32,25 +32,28 @@ class Utilidades:
             for paso in receta.pasos:
                 print(f"{paso}")
 
+    def crear_receta():
+        nombre1 = input("Dime el nombre de la receta: ")
+        ingredientes1 = []
+
+        print("Introduce los ingredientes, escribe fin para terminar.")
+        while True:
+            ing = input(" ")
+            if ing.lower() == "fin":
+                break
+            ingredientes1.append(ing)
+        pasos1 = []
+        print("Introduce los pasos, escribe fin para terminar: ")
+        while True:
+            paso = input (" ")
+            if paso.lower() == "fin":
+                break
+            pasos1.append(paso)
+        return nombre1, ingredientes1, pasos1
+
 # Función principal
 def principal():
-    r1 = RecetaVegetariana("Ensalada César", ["lechuga", "queso", "pan tostado", "salsa"], ["Lavar", "Mezclar", "Servir"])
-    r2 = RecetaNoVegetariana("Pollo al horno", ["pollo", "patatas", "ajo", "aceite"], ["Preparar", "Hornear", "Servir"])
-    
-    # Duplicación de código al imprimir
-    print("== Mostrar recetas ==")
-    Utilidades.imprimir_receta(r1)
-    Utilidades.imprimir_receta(r2)
-
-    # Código duplicado para mostrar ingredientes
-    print("Ingredientes de Ensalada César:")
-    for ing in r1.ingredientes:
-        print(f"* {ing}")
-    
-    print("Ingredientes de Pollo al horno:")
-    for ing in r2.ingredientes:
-        print(f"* {ing}")
-
+    pass
 
 # Ejecutar el programa
 if __name__ == "__main__":
