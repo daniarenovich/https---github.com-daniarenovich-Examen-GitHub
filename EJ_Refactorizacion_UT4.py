@@ -23,6 +23,7 @@ class RecetaNoVegetariana(Receta):
 # Clase con utilidades del restaurante
 class Utilidades:
 
+    @staticmethod
     def mostrar(receta):
             print(f"Receta: {receta.nombre}")
             print("Ingredientes:")
@@ -32,6 +33,7 @@ class Utilidades:
             for paso in receta.pasos:
                 print(f"{paso}")
 
+    @staticmethod
     def crear_receta():
         nombre1 = input("Dime el nombre de la receta: ")
         ingredientes1 = []
@@ -53,7 +55,18 @@ class Utilidades:
 
 # Función principal
 def principal():
-    pass
+   nombre1, ingredientes1, pasos1 = Utilidades.crear_receta()
+   tipo = input("Que tipo de receta quieres crear, vegetariana o no vegetariana ")
+   if tipo == "vegetariana":
+       print("Crear receta vegetariana: ")
+       r1 = RecetaVegetariana(nombre1, ingredientes1, pasos1)
+       Utilidades.mostrar(r1)
+   elif tipo == "no vegetariana":
+       print("Crear receta no vegetariana: ")
+       r2 = RecetaNoVegetariana(nombre1, ingredientes1, pasos1)
+       Utilidades.mostrar(r2)
+   else:
+       print("El tipo de receta no es válida")
 
 # Ejecutar el programa
 if __name__ == "__main__":
