@@ -22,18 +22,7 @@ class RecetaNoVegetariana(Receta):
 
 # Clase con utilidades del restaurante
 class Utilidades:
-    @staticmethod
-    def imprimir_receta(r):
-        print("====================================")
-        r.mostrar()
-        print("====================================")
 
-    @staticmethod
-    def mostrar_lista_ingredientes(lista):
-        for l in lista:
-            print(f"* {l}")
-
-    @staticmethod
     def mostrar(receta):
             print(f"Receta: {receta.nombre}")
             print("Ingredientes:")
